@@ -1,17 +1,28 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <user-details :userData="userData" />
+  <fruit-list />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import FruitList from "./components/FruitList.vue";
+import UserDetails from "./components/UserDetails.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    UserDetails,
+    FruitList,
+  },
+  data() {
+    return {
+      userData: {
+        name: "Nuthana",
+        description: "He is a software engineer",
+        role: "admin",
+      },
+    };
+  },
+};
 </script>
 
 <style>
